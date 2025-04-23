@@ -354,7 +354,32 @@ const people = [
   },
 ];
 
-// eslint-disable-next-line no-console
-console.log(people); // you can remove it
+const table = document.querySelector('table');
 
-// write your code here
+people.forEach((person) => {
+  const { name: personName, sex, born, died } = person;
+  const newRow = document.createElement('tr');
+
+  table.append(newRow);
+
+  person.age = died - born;
+  person.century = Math.ceil(died / 100);
+
+  const { age, century } = person;
+
+  const reference = {
+    name: personName,
+    gender: sex === 'm' ? 'Male' : 'Female',
+    born,
+    died,
+    age,
+    century,
+  };
+
+  for (const data in reference) {
+    const newData = document.createElement('td');
+
+    newRow.append(newData);
+    newData.textContent = reference[data];
+  }
+});

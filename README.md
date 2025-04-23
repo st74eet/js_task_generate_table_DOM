@@ -30,7 +30,7 @@ Hints:
 - Age is `person.died - person.born`
 - Century:divide year of person's death by 100 `Math.ceil(person.died / 100)`
 
-Do not change styles or HTML layout in this task. Change only `main.js` file. .
+Do not change styles or HTML layout in this task. Change only `main.js` file.
 
 Expected result:
 
